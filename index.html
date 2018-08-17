@@ -27,38 +27,47 @@
       <p>Wallet - Ethereum information</p>
       </h3>
     <br>
+    <div class="card">
+      <h5 class="card-header">Meu token Ole Coin</h5>
 
-    <form>
-      <div class="form-group row">
-        <label for="no_status" class="col-sm-2 col-form-label">Estado do aplicação:</label>
-        <div class="col-sm-10">
-          <label class="form-control-plaintext" id="no_status"></label>
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-3">
+            <input type="text" readonly class="form-control" id="quantidade" value="0">
+          </div>
+          <div class="col-3">
+              <input type="text" readonly class="form-control" id="valorToken" value="0">wei
+            </div>          
+          <div class="col-4">
+            <input type="text" class="form-control" id="quantidadeComprar" placeholder="Quantidade">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnBalance" onclick="comprarTokens()">Comprar</button>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="versionGeth" class="col-sm-2 col-form-label">Versão Wallet:</label>
-        <div class="col-sm-10">
-          <label class="form-control-plaintext" id="versionGeth"></label>
+        <br>
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="quantidadeTransferir" placeholder="Quantidade">
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" id="transferirPara" placeholder="Endereço da Conta">
+          </div>
+          <button type="button" class="btn btn-danger" id="btnTransferir" onclick="transferirTokens();">Transferir</button>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="nodes" class="col-sm-2 col-form-label">Nós conectados:</label>
-        <div class="col-sm-10">
-          <label class="form-control-plaintext" id="nodes"></label>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="nodes" class="col-sm-2 col-form-label">Quantidade Contas:</label>
-        <div class="col-sm-10">
-          <label class="form-control-plaintext" id="sizeAccounts"></label>
-        </div>
-      </div>
-      <div class="form-group">
-        <ul id="accounts_ul">
-        </ul>
-      </div>
-    </form>
 
+        <br>
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="quantidadePessoa" placeholder="Quantidade">
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" id="enderecoPessoa" placeholder="Endereço da Conta">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnTransferir" onclick="consultarTokens();">Consultar</button>
+        </div>        
+
+
+      </div>
+    
     <div class="card">
       <h5 class="card-header">Consultar Saldo Conta Ethereum</h5>
 
@@ -118,69 +127,42 @@
       </div>
     </div>
     <br>
-    <div class="card">
-      <h5 class="card-header">Meu token Ole Coin</h5>
-
-      <div class="card-body">
-        <div class="form-row">
-          <div class="col-3">
-            <input type="text" readonly class="form-control" id="quantidade" value="0">
-          </div>
-          <div class="col-3">
-              <input type="text" readonly class="form-control" id="valorToken" value="0">wei
-            </div>          
-          <div class="col-4">
-            <input type="text" class="form-control" id="quantidadeComprar" placeholder="Quantidade">
-          </div>
-          <button type="button" class="btn btn-primary" id="btnBalance" onclick="comprarTokens()">Comprar</button>
-        </div>
-        <br>
-        <div class="form-row">
-          <div class="col-4">
-            <input type="text" class="form-control" id="quantidadeTransferir" placeholder="Quantidade">
-          </div>
-          <div class="col-4">
-            <input type="text" class="form-control" id="transferirPara" placeholder="Endereço da Conta">
-          </div>
-          <button type="button" class="btn btn-danger" id="btnTransferir" onclick="transferirTokens();">Transferir</button>
-        </div>
-
-        <br>
-        <div class="form-row">
-          <div class="col-4">
-            <input type="text" class="form-control" id="quantidadePessoa" placeholder="Quantidade">
-          </div>
-          <div class="col-4">
-            <input type="text" class="form-control" id="enderecoPessoa" placeholder="Endereço da Conta">
-          </div>
-          <button type="button" class="btn btn-primary" id="btnTransferir" onclick="consultarTokens();">Consultar</button>
-        </div>        
-
-
-      </div>
+    
     </div>
     <br>
-    <div class="card">
-      <h5 class="card-header">Visualizar transação</h5>
-
-      <div class="card-body">
-        <div class="form-row">
-          <div class="col-4">
-            <input type="text" class="form-control" id="transaction" placeholder="Transação">
-          </div>
-          <button type="button" class="btn btn-primary" id="btnTransaction">Consultar</button>
-        </div>
-        <br>
-        <div class="form-row">
-          <div class="alert alert-warning" role="alert">
-            <textarea class="form-control" rows="20" cols="90" id="resultTransaction"></textarea>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
 
-
+  <form>
+    <div class="form-group row">
+      <label for="no_status" class="col-sm-2 col-form-label">Estado do aplicação:</label>
+      <div class="col-sm-10">
+        <label class="form-control-plaintext" id="no_status"></label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="versionGeth" class="col-sm-2 col-form-label">Versão Wallet:</label>
+      <div class="col-sm-10">
+        <label class="form-control-plaintext" id="versionGeth"></label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="nodes" class="col-sm-2 col-form-label">Nós conectados:</label>
+      <div class="col-sm-10">
+        <label class="form-control-plaintext" id="nodes"></label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="nodes" class="col-sm-2 col-form-label">Quantidade Contas:</label>
+      <div class="col-sm-10">
+        <label class="form-control-plaintext" id="sizeAccounts"></label>
+      </div>
+    </div>
+    <div class="form-group">
+      <ul id="accounts_ul">
+      </ul>
+    </div>
+  </form>
 
   <br>
 
